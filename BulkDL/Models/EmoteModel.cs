@@ -10,8 +10,6 @@ namespace BulkDL {
         public string extension { get; set; }
         public string url { get; set; }
         public string combined { get; set; }
-
-
     }
 
 }
