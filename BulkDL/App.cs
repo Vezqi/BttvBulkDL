@@ -47,7 +47,7 @@ namespace BulkDL {
                 catch (Exception e) {
                        LogUtil.LogRed(e.ToString());
                 }
-}
+            }
         }
 
         static void FetchAndDownload(int offset)
