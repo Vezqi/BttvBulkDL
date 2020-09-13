@@ -10,7 +10,7 @@ using System.Diagnostics;
 namespace BulkDL {
     class App {
         private static double _elapsedTime;
-        private readonly static int _totalNumberOfPages = 62840; // Currently the total nummber of pages on the BTTV API.
+        private readonly static int _totalNumberOfPages = 62840; // Total # pages as of now
         private static long _generateId() => (long.MaxValue + DateTime.Now.ToBinary()) / 10000; // 草
         private string _dir = "path";
 
