@@ -12,6 +12,7 @@ namespace BulkDL {
         private static double _elapsedTime;
         private readonly static int _totalNumberOfPages = 62840; // Currently the total nummber of pages on the BTTV API.
         private static long _generateId() => (long.MaxValue + DateTime.Now.ToBinary()) / 10000; // 草
+        private string _dir = "path";
 
         static void Main(string[] args)
         {
@@ -32,15 +33,15 @@ namespace BulkDL {
             {
                 try
                 {
-                    if (!File.Exists($@"C:\Users\Vezqi\Desktop\images\{emote.combined}"))
+                    if (!File.Exists($@"{_dir}\{emote.combined}"))
                     {
-                        Client.DownloadFile(emote.url, $@"C:\Users\Vezqi\Desktop\images\{emote.combined}");
+                        Client.DownloadFile(emote.url, $@"{_dir}\{emote.combined}");
                         LogUtil.LogGreen($"Successfully downloaded {emote.combined} ({emote.id})");
                     }
                     else
                     {
                         LogUtil.LogYellow($@"{emote.combined} ({emote.id}) already exists.");
-                        Client.DownloadFile(emote.url, $@"C:\Users\Vezqi\Desktop\images\duplicates\{emote.name}__{_generateId()}{emote.extension}");
+                        Client.DownloadFile(emote.url, $@"{_dir}\duplicates\{emote.name}__{_generateId()}{emote.extension}");
                     }
                 }
                 catch (Exception e) {
