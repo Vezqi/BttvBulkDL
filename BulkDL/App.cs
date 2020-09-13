@@ -15,7 +15,7 @@ namespace BulkDL {
 
         static void Main(string[] args)
         {
-            for(var i =62600; i < _totalNumberOfPages; i+= 100) 
+            for(var i = 1; i < _totalNumberOfPages; i+= 100) 
             {
                 FetchAndDownload(offset: i + 100);
                 LogUtil.LogWhite("Sleeping thread for 10 seconds.");
